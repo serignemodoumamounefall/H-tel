@@ -1,0 +1,213 @@
+/* ============================================================
+   style.css — Hôtel Luxury & Comfort
+   Palette : #0D182A (noir bleu) / #1B263B (bleu marine)
+             #FFC107 (jaune doré) / #FFFFFF (blanc)
+   ============================================================ */
+
+:root {
+  --c-noir: #0D182A;
+  --c-marine: #1B263B;
+  --c-or: #FFC107;
+  --c-blanc: #FFFFFF;
+  --rayon: 16px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F4F5F8;
+  color: var(--c-marine);
+  padding-bottom: 70px; /* place pour la barre basse mobile */
+}
+
+h1, h2, h3, .titre-luxe {
+  font-family: 'Playfair Display', serif;
+  color: var(--c-marine);
+}
+
+a { text-decoration: none; }
+
+/* ---------- Navbar supérieure ---------- */
+.navbar-luxury {
+  background-color: var(--c-marine);
+  padding: 0.8rem 0;
+}
+.navbar-luxury .navbar-brand {
+  color: var(--c-or);
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navbar-luxury .navbar-brand small {
+  color: var(--c-blanc);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.logo-cercle { color: var(--c-or); font-size: 1.6rem; }
+.navbar-luxury .nav-link {
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+.navbar-luxury .nav-link.active,
+.navbar-luxury .nav-link:hover {
+  color: var(--c-or);
+}
+
+/* ---------- Navbar basse (mobile, façon app) ---------- */
+.navbar-bas {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background-color: var(--c-blanc);
+  border-top: 1px solid #e2e2e2;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  z-index: 1030;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+}
+.lien-bas {
+  color: var(--c-marine);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+.lien-bas i { font-size: 1.3rem; }
+.lien-bas.actif { color: var(--c-or); opacity: 1; }
+
+/* ---------- Boutons ---------- */
+.btn-luxe {
+  background-color: var(--c-marine);
+  color: var(--c-blanc);
+  border-radius: 50px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  transition: 0.2s;
+}
+.btn-luxe:hover { background-color: var(--c-noir); color: var(--c-or); }
+
+.btn-or {
+  background-color: var(--c-or);
+  color: var(--c-noir);
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+}
+.btn-or:hover { background-color: #e6ac00; color: var(--c-noir); }
+
+/* ---------- Cartes ---------- */
+.carte-luxe {
+  background: var(--c-blanc);
+  border-radius: var(--rayon);
+  border: 1px solid #eee;
+  box-shadow: 0 4px 16px rgba(13,24,42,0.05);
+  transition: 0.2s;
+}
+.carte-luxe:hover { box-shadow: 0 8px 24px rgba(13,24,42,0.12); }
+
+.carte-service {
+  text-align: center;
+  padding: 1.2rem 0.5rem;
+  cursor: pointer;
+}
+.carte-service i { font-size: 2rem; color: var(--c-marine); }
+.carte-service:hover i { color: var(--c-or); }
+
+/* ---------- Page de connexion / inscription ---------- */
+.page-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:linear-gradient(160deg,#1B263B,#0D182A);
+  opacity: 0.9;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+.carte-auth {
+  background: var(--c-blanc);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.carte-auth .form-control {
+  border-radius: 50px;
+  padding: 0.75rem 1.2rem;
+  border: 1px solid #cdd2db;
+}
+.carte-auth .form-control:focus {
+  border-color: var(--c-or);
+  box-shadow: 0 0 0 0.2rem rgba(255,193,7,0.2);
+}
+
+/* ---------- Bannière d'accueil ---------- */
+.banniere-accueil {
+  position: relative;
+  border-radius: var(--rayon);
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  color: var(--c-blanc);
+  padding: 1.5rem;
+}
+.banniere-accueil::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,24,42,0.1), rgba(13,24,42,0.85));
+}
+.banniere-accueil .contenu-banniere { position: relative; z-index: 2; }
+
+/* ---------- Admin (back-office) ---------- */
+.admin-wrapper { display: flex; min-height: 100vh; }
+.admin-sidebar {
+  width: 260px;
+  background-color: var(--c-marine);
+  color: var(--c-blanc);
+  flex-shrink: 0;
+  min-height: 100vh;
+}
+.admin-sidebar .lien-admin {
+  display: flex; align-items: center; gap: 0.7rem;
+  color: rgba(255,255,255,0.85);
+  padding: 0.75rem 1.3rem;
+  font-weight: 500;
+}
+.admin-sidebar .lien-admin:hover,
+.admin-sidebar .lien-admin.actif {
+  background-color: rgba(255,193,7,0.12);
+  color: var(--c-or);
+  border-left: 3px solid var(--c-or);
+}
+.admin-sidebar .lien-admin.deconnexion { color: #ff6b6b; }
+.admin-contenu { flex: 1; padding: 1.8rem; background: #F4F5F8; }
+
+.carte-stat {
+  background: var(--c-blanc);
+  border-radius: var(--rayon);
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(13,24,42,0.05);
+}
+.carte-stat .valeur { font-size: 2rem; font-weight: 800; color: var(--c-marine); }
+
+/* Sidebar mobile (offcanvas) */
+@media (max-width: 767.98px) {
+  .admin-sidebar { display: none; }
+}
+
+/* ---------- Statuts (badges) ---------- */
+.badge-disponible { background-color: #d1f5e0; color: #1b7a45; }
+.badge-occupee, .badge-annulee { background-color: #fbd6d6; color: #b3261e; }
+.badge-entretien { background-color: #ffe7b3; color: #8a5d00; }
+.badge-confirmee { background-color: #d1f5e0; color: #1b7a45; }
+.badge-attente { background-color: #e2e6ea; color: #555; }
